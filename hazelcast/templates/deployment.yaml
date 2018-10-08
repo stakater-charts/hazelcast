@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+{{ include "hazelcast.labels.stakater" . | indent 4 }}
+{{ include "hazelcast.labels.chart" . | indent 4 }}
+  name: {{ template "hazelcast.name" . }}
+spec:
+  replicas: {{ .Values.hazelcast.deployment.replicas }}
+  template:
+    metadata:
+      labels:
+{{ toYaml .Values.hazelcast.deployment.podLabels | indent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.hazelcast.deployment.container.name }}
+        image: {{ .Values.hazelcast.deployment.container.image | quote }}
+        ports:
+        - containerPort: {{ .Values.hazelcast.deployment.container.port }}

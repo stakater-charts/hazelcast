@@ -1,0 +1,11 @@
+apiVersion: v1
+name: hazelcast
+description: Helm Chart for hazelcast
+version: 1.0.0
+keywords:
+  - stakater
+  - hazelcast
+home: https://github.com/stakater-charts/hazelcast
+maintainers:
+- name: Stakater
+  email: stakater@aurorasolutions.io
