@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+{{ include "hazelcast.labels.stakater" . | indent 4 }}
+{{ include "hazelcast.labels.chart" . | indent 4 }}
+  name: {{ template "hazelcast.name" . }}
+spec:
+  selector:
+{{ toYaml .Values.hazelcast.deployment.podLabels | indent 4 }}
+  ports:
+  - name: web
+    port: {{ .Values.hazelcast.deployment.container.port }}
+    protocol: TCP
+    targetPort: {{ .Values.hazelcast.deployment.container.port }}

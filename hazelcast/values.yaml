@@ -1,0 +1,13 @@
+hazelcast:
+  labels:
+    group: com.stakater.platform
+    provider: stakater
+    version: 1.0.0
+  deployment:
+    replicas: 1
+    podLabels:      
+      app: hazelcast
+    container:
+      name: hazelcast
+      image: "hazelcast/hazelcast:latest"
+      port: 5701
