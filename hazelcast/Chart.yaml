@@ -1,11 +1,11 @@
 apiVersion: v1
 name: hazelcast
 description: Helm Chart for hazelcast
-version: 1.0.0
+version: 1.0.1
 keywords:
-  - stakater
   - hazelcast
+  - kubernetes
 home: https://github.com/stakater-charts/hazelcast
 maintainers:
 - name: Stakater
-  email: stakater@aurorasolutions.io
+  email: hello@stakater.com
